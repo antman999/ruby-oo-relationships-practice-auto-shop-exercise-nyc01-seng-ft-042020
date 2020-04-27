@@ -29,7 +29,7 @@ end
 
 def car_owners_names 
   ##Get a list of the names of all car owners who go to a specific mechanic
- ar = car_owners.map do |na|
+  car_owners.map do |na|
   na.name
 end
 end

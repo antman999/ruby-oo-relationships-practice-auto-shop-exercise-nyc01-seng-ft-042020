@@ -27,14 +27,16 @@ def mechanics
 #we are going to go into the cars method above and grab all the mechanics and put them in a list
   cars.map do |mech|
     mech.mechanic
-end
+end.uniq 
 end
 
 
-def average
-  averagerides = @@all.map do |rides|
-    rides.model
+def self.average
+  averagerides = Car.all.count
+  car_count = 0 
+  Car.all.each do |carss|
+    car_count = car_count + carss.car.count
 end
-averagerides.sum / averagerides.size
+car_count/averagerides
 end
 end

@@ -1,11 +1,13 @@
 class Car
 
-  attr_reader :make, :model
+  attr_reader :make, :model, :classification, :mechanic, :carOwner
 @@all = []
-  def initialize(make, model, classification)
+  def initialize(make, model, classification, mechanic, carOwner)
     @make = make
     @model = model
     @classification = classification
+    @mechanic = mechanic
+    @carOwner = carOwner
     @@all << self
   end
   def self.all
@@ -19,9 +21,10 @@ class Car
 end
 # `Car.find_mechanics(classification)` Get a list of mechanics that have an 
 # expertise that matches the passed in car classification
-def find_mechanics
- c = classifications & Mechanic[specialty]
- c 
+def find_mechanics(classification)
+ Mechanic.all.select do |m|
+  m.classification == classification
+end
 end
 
 end
