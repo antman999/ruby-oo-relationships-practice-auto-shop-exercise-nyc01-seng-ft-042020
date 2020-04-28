@@ -18,7 +18,7 @@ class CarOwner
   #we are gonna go into the cars class grab all the cars then link them to this instance of self
   
   Car.all.select do |car|
-    car.carowner == self
+    car.carOwner == self
   end
 end
 

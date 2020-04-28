@@ -12,10 +12,9 @@ def self.all
 end
 
 def cars
-  spec = Mechanic.all.map do |carr|
-    carr.specialty
+Car.all.select do |carr|
+    carr.mechanic == self 
 end
-spec
 end
 
 

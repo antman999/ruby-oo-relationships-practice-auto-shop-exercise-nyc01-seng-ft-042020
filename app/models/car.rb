@@ -13,17 +13,17 @@ class Car
   def self.all
     @@all
   end
-  def classifications
+  def self.classifications
     # Car.classifications` Get a list of all car classifications
-    car_classification = Car.all.map do |cc|
+       Car.all.map do |cc|
       cc.classification
   end
 end
 # `Car.find_mechanics(classification)` Get a list of mechanics that have an 
 # expertise that matches the passed in car classification
-def find_mechanics(classification)
+def self.find_mechanics(classification)
  Mechanic.all.select do |m|
-  m.classification == classification
+  m.specialty == classification
 end
 end
 
